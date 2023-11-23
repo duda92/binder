@@ -1,3 +1,5 @@
 solo-epd-loader
 matplotlib~=3.8.2
 jupyter
+spacepy
+numpy~=1.26.2
