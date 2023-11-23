@@ -1,16 +1,15 @@
-# This is a sample Python script.
+from matplotlib import pyplot as plt
+from solo_epd_loader import epd_load
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+df_protons, df_electrons, energies = \
+    epd_load(sensor='het', level='l2', startdate=20200820,
+             enddate=20200821, viewing='sun',
+             path='/home/userxyz/solo/data/')
 
+# plot protons and alphas
+ax = df_protons.plot(logy=True, subplots=True, figsize=(20, 60))
+plt.show()
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# plot electrons
+ax = df_electrons.plot(logy=True, subplots=True, figsize=(20, 60))
+plt.show()
