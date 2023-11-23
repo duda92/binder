@@ -1,2 +1,3 @@
 solo-epd-loader
 matplotlib~=3.8.2
+jupyter
